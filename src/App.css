@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -35,4 +36,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+.input{
+  border-radius: 12px;
+  height: 37px;
+  width: 270px;
+  border: none;
+  margin: 10px;
+  padding-right: 0px;
+
+}
+.button,.button1{
+  background-color: #EBCD49;
+  color: #003249;
+  border: none;
+  height: 30px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 8px;
+}
+.button1{
+  height: 46px;
+  width: 150px;
+}
+.rgstr{
+  display: grid;
+  grid-template-columns: 200px 270px;
+  gap: 10px;
+  
+}
+.chkbx{
+  height: 20px;
+  margin: 0 20px 0 10px ;
+  display: grid;
+  grid-template-columns: 40px 300px;
+
+}
+.chkbx1{
+  height: 15px;
+}
+.lgn{
+  display: grid;
+  grid-template-columns: 180px 270px;
 }
