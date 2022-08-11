@@ -1,4 +1,5 @@
 import React from "react"
+import { useNavigate } from "react-router-dom";
 
 import {Login} from "../Login"
 
@@ -8,57 +9,64 @@ export function Register ():JSX.Element{
     const [password,setPassword]=React.useState<string>("")
     const [confPassword,setConfPassword]=React.useState<string>("")
     const [email,setEmail]=React.useState<string>("")
-    const [error ,setError]=React.useState<boolean>(false)
+    const [isChecked,setIsChecked]=React.useState<boolean>(false)
+    // const [error ,setError]=React.useState<boolean>(false)
 
-    function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string)
+    const navigate = useNavigate();
+//     function onclickCheckboxxHandleEvent(checkboxx:boolean):void
+//    {
+//     checkboxx=true
+//    }
+    function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string,checkboxx:boolean)
    {
-
+    if(firstName!=="" && lastName!=="" && password!=="" && confPassword!=="" && email!=="" && checkboxx===true){
+    navigate("/login")}
    }
    
-   function confpss () :boolean {
-    if (password!==confPassword) {
-        setError(true) }
+//    function confpss () :boolean {
+//     if (password!==confPassword) {
+//         setError(true) }
     
-     return error 
+//      return error 
         
-   }
+//    }
 
 
     return (
-        <div style={{gap:"10px"}}>
-
+        <div className="rgstr">
+            
            <div>
-            <span>First Name </span>
-            <input type="text" placeholder="First Name" required value={firstName} 
+            <span>First Name </span></div><div>
+            <input className="input" type="text" placeholder="First Name" required value={firstName} 
             onChange={(event)=>setFirstName(event.target.value)}/>
             </div> 
 
             <div>
-            <span>Last Name </span>
-            <input type="text" placeholder="Last Name" required value={lastName} 
+            <span>Last Name </span></div><div>
+            <input type="text" className="input" placeholder="Last Name" required value={lastName} 
             onChange={(event)=>setLastName(event.target.value)}/>
             </div>
 
             <div>
-            <span>Email </span>
-            <input type="email" placeholder="Email" required value={email} 
+            <span>Email </span></div><div>
+            <input type="email" className="input" placeholder="Email" required value={email} 
             onChange={(event)=>setEmail(event.target.value)}/>
             </div>
 
             <div>
-            <span>Password </span>
-            <input type="password" placeholder="........" required minLength={8} value={password}
+            <span>Password </span></div><div>
+            <input type="password" className="input" placeholder="********" required minLength={8} value={password}
              onChange={(event)=>setPassword(event.target.value)}/>
             </div>
 
             <div>
-            <span>Confirm Password </span>
-            <input type="password" placeholder="........" required minLength={8}  value={confPassword}
+            <span>Confirm Password </span></div><div>
+            <input type="password" className="input" placeholder="********" required minLength={8}  value={confPassword}
              onChange={(event)=>setConfPassword(event.target.value)}/>
             </div>
 
-            <input type="checkbox" value="I have read and agree to the terms" />
-            <button type="submit" onClick={()=>{onclickRegisterHandleEvent(firstName,lastName,email,password)}}>Register</button> 
+            <div className="chkbx"><input type="checkbox" className="chkbx1" onChange={(event)=>setIsChecked(!isChecked)}/><h6>I accept the Terms of use & Privacy Policy</h6></div><br/>
+            <button type="submit" className="button" onClick={()=>{onclickRegisterHandleEvent(firstName,lastName,email,password,isChecked)}}>Register</button> 
            
         </div>
     )
