@@ -13,7 +13,10 @@ export function Register ():JSX.Element{
    
       function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string,checkboxx:boolean)
    {
-    if(firstName!=="" && lastName!=="" && password!=="" && confPassword!=="" && email!=="" && checkboxx===true){
+    if(password!==confPassword){
+        console.log("Confirm password is wrong !")
+    }
+    if(firstName!=="" && lastName!=="" && password!=="" && confPassword===password && email!=="" && checkboxx===true){
     navigate("/login")}
    }
    
