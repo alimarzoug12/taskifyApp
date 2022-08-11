@@ -2,6 +2,8 @@ import React from "react"
 import { useNavigate } from "react-router-dom";
 
 export function Register ():JSX.Element{
+    const navigate = useNavigate();
+
     const [firstName,setFirstName]=React.useState<string>("")
     const [lastName,setLastName]=React.useState<string>("")
     const [password,setPassword]=React.useState<string>("")
@@ -37,7 +39,8 @@ export function Register ():JSX.Element{
             </div>
 
             <div>
-            <span>Password </span></div><div>
+            <span>Password </span></div>
+            <div>
             <input type="password" className="input" placeholder="********" required minLength={8} value={password}
              onChange={(event)=>setPassword(event.target.value)}/>
             </div>
@@ -48,7 +51,15 @@ export function Register ():JSX.Element{
              onChange={(event)=>setConfPassword(event.target.value)}/>
             </div>
 
-            <div className="chkbx"><input type="checkbox" className="chkbx1" onChange={(event)=>setIsChecked(!isChecked)}/><h6>I accept the Terms of use & Privacy Policy</h6></div><br/>
+            <div 
+                style={{gap:"20px",            
+                 justifyContent: "space-between",
+                 display: "flex",
+                 width: "400px"}}>
+            <input type="checkbox" className="chkbx1" onChange={(event)=>setIsChecked(!isChecked)}/>
+            <span>I accept the Terms of use & Privacy Policy</span>
+            </div>
+            <br/>
             <button type="submit" className="button" onClick={()=>{onclickRegisterHandleEvent(firstName,lastName,email,password,isChecked)}}>Register</button> 
            
         </div>
