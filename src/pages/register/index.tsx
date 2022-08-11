@@ -1,8 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
 
-import {Login} from "../Login"
-
 export function Register ():JSX.Element{
     const [firstName,setFirstName]=React.useState<string>("")
     const [lastName,setLastName]=React.useState<string>("")
@@ -10,28 +8,13 @@ export function Register ():JSX.Element{
     const [confPassword,setConfPassword]=React.useState<string>("")
     const [email,setEmail]=React.useState<string>("")
     const [isChecked,setIsChecked]=React.useState<boolean>(false)
-    // const [error ,setError]=React.useState<boolean>(false)
-
-    const navigate = useNavigate();
-//     function onclickCheckboxxHandleEvent(checkboxx:boolean):void
-//    {
-//     checkboxx=true
-//    }
-    function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string,checkboxx:boolean)
+   
+      function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string,checkboxx:boolean)
    {
     if(firstName!=="" && lastName!=="" && password!=="" && confPassword!=="" && email!=="" && checkboxx===true){
     navigate("/login")}
    }
    
-//    function confpss () :boolean {
-//     if (password!==confPassword) {
-//         setError(true) }
-    
-//      return error 
-        
-//    }
-
-
     return (
         <div className="rgstr">
             
