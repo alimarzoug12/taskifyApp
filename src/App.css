@@ -46,7 +46,7 @@
   padding-right: 0px;
 
 }
-.button,.button1{
+.button, .button1{
   background-color: #EBCD49;
   color: #003249;
   border: none;
@@ -54,6 +54,10 @@
   width: 100px;
   border-radius: 10px;
   margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 .button1{
   height: 46px;
