@@ -25,7 +25,7 @@ export function Login():JSX.Element {
     </div>
     <div className='d-flex'>
         <span>Mot de passe </span> </div><div> 
-    <input type="password" className="input" placeholder='Password' name="password" pattern="8" 
+    <input type="password" className="input" placeholder='Password' name="password" 
     value={password} onChange={(event)=>setPassword(event.target.value)}/>
     </div></div>
     <button type="submit" className="button" onClick={()=>{onclickLoginHandleEvent(email,password)}}>Valider</button>

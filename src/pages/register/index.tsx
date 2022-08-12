@@ -10,7 +10,7 @@ export function Register ():JSX.Element{
     const [confPassword,setConfPassword]=React.useState<string>("")
     const [email,setEmail]=React.useState<string>("")
     const [isChecked,setIsChecked]=React.useState<boolean>(false)
-   
+    
       function onclickRegisterHandleEvent(firstName:string,lastName:string,email:string,password:string,checkboxx:boolean)
    {
     if(password!==confPassword){
@@ -44,13 +44,13 @@ export function Register ():JSX.Element{
             <div>
             <span>Password </span></div>
             <div>
-            <input type="password" className="input" placeholder="********" required minLength={8} value={password}
+            <input type="password" className="input" placeholder="********" required  value={password}
              onChange={(event)=>setPassword(event.target.value)}/>
             </div>
 
             <div>
             <span>Confirm Password </span></div><div>
-            <input type="password" className="input" placeholder="********" required minLength={8}  value={confPassword}
+            <input type="password" className="input" placeholder="********" required  value={confPassword}
              onChange={(event)=>setConfPassword(event.target.value)}/>
             </div>
 
